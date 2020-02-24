@@ -6,7 +6,6 @@ const BASC_URL = 'https://api.exchangeratesapi.io/latest';
 
 function App() {
   const [currencyOptions, setCurrencyOptions] = useState([]);
-  console.log(currencyOptions);
 
   useEffect(() => {
     fetch(BASC_URL)
