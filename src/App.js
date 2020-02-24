@@ -11,6 +11,7 @@ function App() {
   const [exchangeRate, setExchangeRate] = useState();
   const [amount, setAmount] = useState(1);
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
+  console.log(exchangeRate);
 
   useEffect(() => {
     fetch(BASC_URL)
@@ -20,6 +21,7 @@ function App() {
         setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
         setFromCurrency(data.base);
         setToCurrency(firstCurrency);
+        setExchangeRate(data.rates[firstCurrency]);
       });
   }, []);
   return (
